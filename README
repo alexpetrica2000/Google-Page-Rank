@@ -1,0 +1,26 @@
+	Implementarea temei a durat cam 5-6 ore. A fost o tema foarte interesanta,
+intrucat am invatat ce are la baza motorul de cautare folosit de Google,
+folosit de oameni zilnic si care genereaza peste 1 milion de raspunsuri
+per cautare.
+	La primul task am implementat PageRank-ul folosind algoritmul Iterative.
+Folosind documentatia primita cat si informatiile din PDF, am ales prima
+metoda, cea nematriceala, in care fiecare element din vectorul PageRank era generat
+de suma formata de linkurile ce duceau catre elementul respectiv, impartit la numarul
+total de linkuri al fiecaruia. De asemenea s-a tinut cont si de "dumping factor", de cele
+mai multe ori fiind folosit cu valoarea 0.85, asemenea implementarii noastre, ajungand
+la formula din PDF.
+	Al doilea task a fost constituit de algoritmul Algebraic. Pe scurt, a trebuit
+sa formam aceste rank-uri sub forma matriceala, o matrice N X N unde N este numarul total
+de linkuri, in care M(i,j) este 1/nr_linkuri_j daca j contine linkul i sau 0 altfel.
+Apoi, pentru a afla vectorul de Pagerankuri avem nevoie de a afla inversa unei matrici.
+Inversa am calculat-o folosit Gram_Schmidt modificat invatat la laborator, dupa care 
+pentru a calcula sistemul superior triunghiular R * xi = Q' * ei am folosit SST,
+invatat tot la laborator, pentru a maximiza stabilitatea numerica. 
+	Ulterior taskului 2 a trebuit sa sortam descrescator vectorul de Pagerankuri returnat
+de algoritmul Algebraic, construind o matrice, in care pe prima coloana avem pozitia 
+initiala, pe a 2a coloana noua pozitie dupa sortare, iar a treia va fi inlocuita de gradul
+de apartenenta al fiecarei pagini(initial fiind elementele din vectorul de Pagerankuri).
+	Ultimul task a fost reprezentat de Gradul de Apartenenta. Prin acesta, s-a aflat
+gradul de apartenenta al unei pagini la multimea paginilor importante. Folosind functia 
+din PDF si asigurand continuitatea acestuia, pentru fiecare dintre cele 3 cazuri se 
+intoarce cu usurinta gradul de apartenenta al fiecarul link. 
